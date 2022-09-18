@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- Scripts -->
+    <script src="./js/products.js" defer type="module"></script>
+    <script src="./js/script.js" defer type="module"></script>
+    <script src="./js/icon.js" defer type="module"></script>
+
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8b9b074ef2.js" crossorigin="anonymous"></script>
+
+    <!-- Font Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-pry-clr-7 font-poppins">
+    <nav class="flex justify-between items-center w-full lg:px-20 md:px-10 px-7 lg:py-4 py-3 text-pry-clr-0">
+        <div>
+            <ul class="nav-links md:flex gap-10 text-[20px] hidden capitalize tracking-wider">
+                <li>
+                    <a href="./index.html" target="_blank">home</a>
+                </li>
+                <li>
+                    <a href="./products.html">products</a>
+                </li>
+                <li>
+                    <a href="./about.html" target="_blank">about</a>
+                </li>
+            </ul>
+            <button type="button" title="sidebar"
+                class="open-btn block md:hidden px-5 bg-pry-clr-1 text-[25px] rounded-full trans-1 hover:bg-pry-clr-3 text-white">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <img src="./images/logo-black.svg" alt="logo-black">
+        <button type="button" class="cart-open relative" title="cart">
+            <span
+                class="cart-no absolute right-[-10px] top-[-10px] bg-pry-clr-1 text-white font-semibold px-[5px] rounded-full">
+                0
+            </span>
+            <span class="text-[25px]">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </span>
+        </button>
+    </nav>
+
+    <section class="bg-pry-clr-5 w-full px-10 md:px-20 py-10">
+        <h1 class="text-pry-clr-4 text-xl md:text-3xl tracking-wider">Home / Products</h1>
+    </section>
+
+    <section id="container-products" class="grid gap-[1rem] my-[4rem] mx-[1rem] md:mx-[4rem]">
+        <article id="filter-container" class="mx-[2rem] md:mx-auto">
+            <input type="text" placeholder="search..." id="search-input"
+                class="border-none bg-pry-clr-8 text-pry-clr-3 px-1 py-2 text-xs mb-7 tracking-wide overflow-hidden rounded-md">
+            <h3 class="text-pry-clr-11 text-[13.6px] font-semibold tracking-wider mb-2">Company</h3>
+            <div class="btn-container flex flex-col gap-2 items-start mb-7">
+                <button type="button" data-id="all">all</button>
+                <button type="button" data-id="ikea">ikea</button>
+                <button type="button" data-id="marcos">marcos</button>
+                <button type="button" data-id="caressa">caressa</button>
+                <button type="button" data-id="liddy">liddy</button>
+            </div>
+            <input type="range" title="price range" min="5" max="90" class="price-range">
+            <h3 class="text-sm trackin-widest text-pry-clr-11">
+                Value: <span class="range-value">all</span>
+            </h3>
+        </article>
+
+        <article id="products-container"
+            class="grid place-items-center text-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2rem] md:gap-[1.5rem]">
+        </article>
+    </section>
+
+    <aside id="sidebar"
+        class="fixed top-0 z-[100] h-screen w-screen grid place-items-center bg-pry-clr-z md:hidden hidden">
+        <article class="relative bg-white rounded-md w-[90vw] max-w-[600px] h-[95vh] pl-10">
+            <button type="button" title="close" class="close-btn text-pry-clr-0 text-[25px] absolute top-4 right-5">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex flex-col gap-5 mt-12 text-xl text-pry-clr-4 w-fit">
+                <a href="./index.html" target="_blank">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <span class="ml-3">Home</span>
+                </a>
+                <a href="./products.html">
+                    <i class="fa-solid fa-couch"></i>
+                    <span class="ml-3">Products</span>
+                </a>
+                <a href="./about.html" target="_blank">
+                    <i class="fa-solid fa-book"></i>
+                    <span class="ml-3">About</span>
+                </a>
+            </div>
+        </article>
+    </aside>
+
+    <section id="sidebar-cart" class="fixed top-0 z-[100] trans-0 grid place-items-end h-screen w-screen overlay">
+        <aside id="sidebar-cart-center"
+            class="relative px-[1rem] pt-[3rem] pb-0 bg-pry-clr-5 max-w-[400px] w-full h-full trans-1 overflow-scroll">
+            <button type="button" title="close" class="cart-close text-pry-clr-4 text-[25px] absolute top-4 left-5">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <article class="cart h-full w-full">
+                <h3 class="capitalize font-kaushan text-pry-clr-0 text-3xl text-center">
+                    your bag
+                </h3>
+
+                <div class="cart-items"></div>
+
+                <div class="md:mb-10 mb-28 flex flex-col items-center gap-6">
+                    <h3 class="capitalize font-kaushan text-pry-clr-0 text-3xl">
+                        Total : $<span class="cart-price">0.00</span>
+                    </h3>
+                    <button
+                        class="px-24 py-1 uppercase text-white text-md rounded-md bg-pry-clr-1 trans-1 hover:bg-pry-clr-2 hover:text-pry-clr-6">
+                        checkout
+                    </button>
+                </div>
+            </article>
+        </aside>
+    </section>
+</body>
+
+</html>
